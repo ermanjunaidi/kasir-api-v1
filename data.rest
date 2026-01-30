@@ -1,0 +1,46 @@
+@baseUrl = http://localhost:8080
+
+###
+GET {{baseUrl}}/health
+
+###
+GET {{baseUrl}}/api/produk
+
+###
+POST {{baseUrl}}/api/produk
+Content-Type: application/json
+
+{
+    "name": "Es Jeruk Peras",
+    "price": 8000,
+    "stock": 100,
+    "category_id": 1
+}
+
+###
+POST {{baseUrl}}/api/produk
+Content-Type: application/json
+
+{
+    "name": "Nasi Goreng Spesial",
+    "price": 20000,
+    "stock": 30,
+    "category_id": 2
+}
+
+###
+GET {{baseUrl}}/api/produk/1
+
+###
+PUT {{baseUrl}}/api/produk/1
+Content-Type: application/json
+
+{
+    "name": "Kopi Hitam (Update)",
+    "price": 12000,
+    "stock": 80,
+    "category_id": 1
+}
+
+###
+DELETE {{baseUrl}}/api/produk/1
