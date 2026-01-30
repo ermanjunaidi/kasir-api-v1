@@ -8,9 +8,6 @@ API sederhana untuk sistem kasir berbasis Go yang terintegrasi dengan database P
 - Integrasi PostgreSQL menggunakan `pgx`
 - Konfigurasi menggunakan Environment Variables
 
-## Persyaratan
-- [Go](https://golang.org/dl/) (versi 1.20 atau terbaru)
-- [PostgreSQL](https://www.postgresql.org/download/)
 
 ## Instalasi & Persiapan
 
