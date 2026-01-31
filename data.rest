@@ -1,4 +1,4 @@
-@baseUrl = http://localhost:8080
+@baseUrl = https://kasirv1.zeabur.app
 
 ###
 GET {{baseUrl}}/health
