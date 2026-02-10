@@ -36,7 +36,6 @@ func initConfig() Config {
 		DBConn: viper.GetString("DB_CONN"),
 	}
 }
-
 func main() {
 	config := initConfig()
 
@@ -63,6 +62,13 @@ func main() {
 	// Routes
 	http.HandleFunc("/api/produk", productHandler.HandleProducts)
 	http.HandleFunc("/api/produk/", productHandler.HandleProductByID)
+
+	// Transaction
+	transactionRepo := repositories.NewTransactionRepository(db)
+	transactionService := services.NewTransactionService(transactionRepo)
+	transactionHandler := handlers.NewTransactionHandler(transactionService)
+
+	http.HandleFunc("/api/checkout", transactionHandler.HandleCheckout)
 
 	// Health check
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
