@@ -63,5 +63,11 @@ Content-Type: application/json
     ]
 }
 
+### Sales Summary Hari Ini
+GET {{baseUrl}}/api/report/hari-ini
+
+### Sales Report by Range
+GET {{baseUrl}}/api/report?start_date=2026-02-01&end_date=2026-02-28
+
 ### Delete Product
 DELETE {{baseUrl}}/api/produk/1
