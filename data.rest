@@ -1,12 +1,16 @@
-@baseUrl = https://kasirv1.zeabur.app
+# @baseUrl = https://kasirv1.zeabur.app
+@baseUrl = http://localhost:8080
 
-###
+### Health Check
 GET {{baseUrl}}/health
 
-###
+### Get All Products
 GET {{baseUrl}}/api/produk
 
-###
+### Search Products by Name
+GET {{baseUrl}}/api/produk?name=Jeruk
+
+### Create Product (Juice)
 POST {{baseUrl}}/api/produk
 Content-Type: application/json
 
@@ -17,7 +21,7 @@ Content-Type: application/json
     "category_id": 1
 }
 
-###
+### Create Product (Fried Rice)
 POST {{baseUrl}}/api/produk
 Content-Type: application/json
 
@@ -28,10 +32,10 @@ Content-Type: application/json
     "category_id": 2
 }
 
-###
+### Get Product by ID
 GET {{baseUrl}}/api/produk/1
 
-###
+### Update Product
 PUT {{baseUrl}}/api/produk/1
 Content-Type: application/json
 
@@ -42,5 +46,22 @@ Content-Type: application/json
     "category_id": 1
 }
 
-###
+### Checkout / Transaction
+POST {{baseUrl}}/api/checkout
+Content-Type: application/json
+
+{
+    "items": [
+        {
+            "product_id": 1,
+            "quantity": 2
+        },
+        {
+            "product_id": 2,
+            "quantity": 1
+        }
+    ]
+}
+
+### Delete Product
 DELETE {{baseUrl}}/api/produk/1
