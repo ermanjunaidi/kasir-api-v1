@@ -37,6 +37,31 @@ go run main.go
 ```
 Aplikasi akan berjalan di `http://localhost:8080`.
 
+## Menjalankan Dengan Docker Compose
+
+Project ini sudah disiapkan dengan:
+- `app`: service API Go
+- `db`: PostgreSQL 16 + auto-init schema dari `database/init.sql`
+
+Jalankan:
+```bash
+docker compose up --build
+```
+
+Setelah container siap:
+- API: `http://localhost:8080`
+- PostgreSQL: `localhost:5432` (`kasir/kasir`, database `kasir_db`)
+
+Stop service:
+```bash
+docker compose down
+```
+
+Reset database volume:
+```bash
+docker compose down -v
+```
+
 ## Dokumentasi API
 
 Anda dapat menggunakan file `data.rest` jika menggunakan ekstensi REST Client di VS Code.
